@@ -2,8 +2,10 @@ import os
 
 STREAM_KEY = "z96x-91ph-1gmj-d9sx-1hy2"
 
+VIDEO_EXTENSIONS = (".mp4", ".mkv", ".mov", ".webm", ".avi", ".flv", ".m4v")
+
 def create_playlist():
-    videos = [f for f in os.listdir() if f.endswith(".mp4")]
+    videos = [f for f in os.listdir() if f.lower().endswith(VIDEO_EXTENSIONS)]
 
     with open("playlist.txt", "w") as f:
         for video in videos:
